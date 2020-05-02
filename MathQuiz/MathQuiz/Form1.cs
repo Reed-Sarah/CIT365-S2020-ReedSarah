@@ -216,17 +216,44 @@ namespace MathQuiz
 
         private void play_Sound_Sub(object sender, EventArgs e)
         {
-
+            if (minuend - subtrahend == difference.Value && timeLeft > 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sarah\source\repos\CIT365-S2020-ReedSarah\MathQuiz\MathQuiz\right_Answer.wav");
+                player.Play();
+            }
+            else if (timeLeft > 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sarah\source\repos\CIT365-S2020-ReedSarah\MathQuiz\MathQuiz\wrong_Answer.wav");
+                player.Play();
+            }
         }
 
         private void play_Sound_Times(object sender, EventArgs e)
         {
-
+            if (multiplicand * multiplier == product.Value && timeLeft > 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sarah\source\repos\CIT365-S2020-ReedSarah\MathQuiz\MathQuiz\right_Answer.wav");
+                player.Play();
+            }
+            else if (timeLeft > 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sarah\source\repos\CIT365-S2020-ReedSarah\MathQuiz\MathQuiz\wrong_Answer.wav");
+                player.Play();
+            }
         }
 
         private void play_Sound_Divide(object sender, EventArgs e)
         {
-
+            if (dividend / divisor == quotient.Value && timeLeft > 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sarah\source\repos\CIT365-S2020-ReedSarah\MathQuiz\MathQuiz\right_Answer.wav");
+                player.Play();
+            }
+            else if (timeLeft > 0)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sarah\source\repos\CIT365-S2020-ReedSarah\MathQuiz\MathQuiz\wrong_Answer.wav");
+                player.Play();
+            }
         }
     }
 }
