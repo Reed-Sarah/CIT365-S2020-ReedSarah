@@ -12,15 +12,18 @@ namespace MegaDesk_Reed
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        public DisplayQuote(string CustomerName, string deskWidth, string deskDepth, string deskDrawers, string deskMaterial, string shipDays)
         {
             InitializeComponent();
-            custName.Text = "Sarah Reed";
-            width.Text = "42";
-            depth.Text = "22";
-            drawers.Text = "4";
-            Material.Text = "Oak";
-            rush.Text = "No rush (14 Days)";
+
+           custName.Text = CustomerName;
+
+
+            width.Text = deskWidth;
+            depth.Text = deskDepth;
+            drawers.Text = deskDrawers;
+            Material.Text = deskMaterial;
+            rush.Text = shipDays;
             cost.Text = "$600";
 
 

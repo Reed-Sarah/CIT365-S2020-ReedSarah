@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
+            this.UserName = new System.Windows.Forms.TextBox();
             this.rush = new System.Windows.Forms.ComboBox();
             this.material = new System.Windows.Forms.ComboBox();
             this.drawer = new System.Windows.Forms.NumericUpDown();
@@ -118,13 +118,13 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Your Full Name:";
             // 
-            // name
+            // UserName
             // 
-            this.name.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(303, 78);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(253, 30);
-            this.name.TabIndex = 0;
+            this.UserName.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.Location = new System.Drawing.Point(303, 78);
+            this.UserName.Name = "UserName";
+            this.UserName.Size = new System.Drawing.Size(253, 30);
+            this.UserName.TabIndex = 0;
             // 
             // rush
             // 
@@ -216,7 +216,7 @@
             this.Controls.Add(this.drawer);
             this.Controls.Add(this.material);
             this.Controls.Add(this.rush);
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.UserName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.TextBox UserName;
         private System.Windows.Forms.ComboBox rush;
         private System.Windows.Forms.ComboBox material;
         private System.Windows.Forms.NumericUpDown drawer;

@@ -59,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 82);
+            this.label2.Location = new System.Drawing.Point(49, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 54);
             this.label2.TabIndex = 2;

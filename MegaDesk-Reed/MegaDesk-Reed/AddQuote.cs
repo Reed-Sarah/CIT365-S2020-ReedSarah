@@ -16,6 +16,8 @@ namespace MegaDesk_Reed
         public AddQuote()
         {
             InitializeComponent();
+           
+            
             
         }
 
@@ -36,8 +38,11 @@ namespace MegaDesk_Reed
         private void button1_Click(object sender, EventArgs e)
         {
             Desk desk = new Desk((int)width.Value, (int)depth.Value, (int)drawer.Value);
-            DisplayQuote display = new DisplayQuote();
            
+
+            DisplayQuote display = new DisplayQuote(UserName.Text, width.Text, depth.Text, drawer.Text, material.Text, rush.Text);
+            display.ShowDialog();
+
             try
             {
                // DeskQuote.CalculateCost();
@@ -50,7 +55,8 @@ namespace MegaDesk_Reed
                 const string caption = "Form Closing";
                 var result = MessageBox.Show(message, caption);
             }
-            display.Show();
+
+           
             Close();
         }
 
