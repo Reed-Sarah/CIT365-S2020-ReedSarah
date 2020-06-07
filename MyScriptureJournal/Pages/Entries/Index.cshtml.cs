@@ -42,45 +42,47 @@ namespace MyScriptureJournal.Pages.Entries
                                             orderby e.Book
                                             select e.Book;
 
-            var journalEntries = from e in _context.JournalEntry
-                         select e;
+            //var journalEntries = from e in _context.JournalEntry
+            //             select e;
 
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-               journalEntries = journalEntries.Where(s => s.Notes.Contains(SearchString));
-            }
-
-            if (!string.IsNullOrEmpty(SelectedBook))
-            {
-                journalEntries = journalEntries.Where(x => x.Book == SelectedBook);
-            }
 
             BookSort = String.IsNullOrEmpty(sortOrder) ? "book_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
 
-            IQueryable<JournalEntry> studentsIQ = from s in _context.JournalEntry
+            IQueryable<JournalEntry> entries = from s in _context.JournalEntry
                                              select s;
 
             switch (sortOrder)
             {
                 case "book_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.Book);
+                    entries = entries.OrderByDescending(s => s.Book);
                     break;
                 case "Date":
-                    studentsIQ = studentsIQ.OrderBy(s => s.Date);
+                    entries = entries.OrderBy(s => s.Date);
                     break;
                 case "date_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.Date);
+                    entries = entries.OrderByDescending(s => s.Date);
                     break;
                 default:
-                    studentsIQ = studentsIQ.OrderBy(s => s.Book);
+                    entries = entries.OrderBy(s => s.Book);
                     break;
             }
 
-            JournalEntry = await studentsIQ.AsNoTracking().ToListAsync();
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                entries = entries.Where(s => s.Notes.Contains(SearchString));
+            }
+
+            if (!string.IsNullOrEmpty(SelectedBook))
+            {
+                entries = entries.Where(x => x.Book == SelectedBook);
+            }
+
+            JournalEntry = await entries.AsNoTracking().ToListAsync();
 
             Books = new SelectList(await noteQuery.Distinct().ToListAsync());
-            JournalEntry = await journalEntries.ToListAsync();
+            JournalEntry = await entries.ToListAsync();
         }
     }
 }
