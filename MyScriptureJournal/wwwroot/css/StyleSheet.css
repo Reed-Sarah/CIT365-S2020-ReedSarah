@@ -1,0 +1,38 @@
+﻿
+
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Handlee&display=swap');
+
+body{
+    font-family: 'Handlee', cursive;
+    font-size: 125%;
+    font-weight: 500;
+    background-color: #f2eecb;
+}
+
+.navbar-brand {
+    color: #f2eecb !important;
+}
+
+.navbar {
+    
+    background-color: #000 !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Beth Ellen', cursive;
+    margin-bottom: 1em;
+}
+
+table {
+    border-color: black;
+}
+
+.cover-photo {
+    width: 800px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .cover-photo {
+        width: 75vw;
+    }
+}
