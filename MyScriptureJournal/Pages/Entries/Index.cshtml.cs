@@ -42,8 +42,7 @@ namespace MyScriptureJournal.Pages.Entries
                                             orderby e.Book
                                             select e.Book;
 
-            //var journalEntries = from e in _context.JournalEntry
-            //             select e;
+           
 
 
             BookSort = String.IsNullOrEmpty(sortOrder) ? "book_desc" : "";
