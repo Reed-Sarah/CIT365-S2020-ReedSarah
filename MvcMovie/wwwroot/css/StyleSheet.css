@@ -1,0 +1,32 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: #E4DFDA;
+}
+
+.navbar-brand {
+    color: #E4DFDA !important;
+}
+
+.navbar {
+    background-color: #326273 !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 1em;
+}
+
+
+
+.cover-photo {
+    width: 800px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .cover-photo {
+        width: 75vw;
+    }
+}
