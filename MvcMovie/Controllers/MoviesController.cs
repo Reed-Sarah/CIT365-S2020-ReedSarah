@@ -21,9 +21,8 @@ namespace MvcMovie.Controllers
 
         // GET: Movies
         // GET: Movies
-        public async Task<IActionResult> Index(string sortOrder, string searchString, string SelectedGenre)
+        public async Task<IActionResult> Index(string searchString)
         {
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var movies = from m in _context.Movie
                          select m;
 
@@ -32,23 +31,7 @@ namespace MvcMovie.Controllers
                 movies = movies.Where(s => s.Title.Contains(searchString));
             }
 
-            if (!String.IsNullOrEmpty(SelectedGenre))
-            {
-                movies = movies.Where(s => s.Genre.Contains(SelectedGenre));
-            }
-            switch (sortOrder)
-            {
-                
-                case "Date":
-                    movies = movies.OrderBy(s => s.ReleaseDate);
-                    break;
-                case "date_desc":
-                    movies = movies.OrderByDescending(s => s.ReleaseDate);
-                    break;
-                
-            }
-            return View(movies.ToList());
-           
+            return View(await movies.ToListAsync());
         }
 
         // GET: Movies/Details/5
